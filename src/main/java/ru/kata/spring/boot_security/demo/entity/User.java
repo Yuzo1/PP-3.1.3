@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Set;
 
 @Entity
 @Data
@@ -31,7 +32,7 @@ public class User implements UserDetails {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
 
-    private List<Role> roles = new ArrayList<>();
+    private Set<Role> roles;
 
     public User (){
     }
